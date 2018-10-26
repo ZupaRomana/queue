@@ -11,11 +11,15 @@ public class CustomQueue {
     }
 
     public void enqueue(String value) throws IllegalArgumentException {
-        if (value == null) {
+        if (isProperValue(value)) {
             throw new IllegalArgumentException();
         } else {
 
         }
+    }
+
+    private boolean isProperValue(String value) {
+        return value == null;
     }
 
     public String peek() {
