@@ -11,14 +11,14 @@ public class CustomQueue {
     }
 
     public void enqueue(String value) throws IllegalArgumentException {
-        if (isProperValue(value)) {
+        if (invalidValue(value)) {
             throw new IllegalArgumentException();
         } else {
 
         }
     }
 
-    private boolean isProperValue(String value) {
+    private boolean invalidValue(String value) {
         return value == null;
     }
 
