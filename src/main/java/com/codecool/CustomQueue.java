@@ -10,8 +10,12 @@ public class CustomQueue {
         tail = null;
     }
 
-    public void enqueue(String value) {
+    public void enqueue(String value) throws IllegalArgumentException {
+        if (value == null) {
+            throw new IllegalArgumentException();
+        } else {
 
+        }
     }
 
     public String peek() {
