@@ -21,4 +21,14 @@ public class CustomQueue {
     public String dequeue() {
         return null;
     }
+
+    private class Node {
+        private String value;
+        private Node nextNode;
+
+        Node(String value, Node nextNode) {
+            this.value = value;
+            this.nextNode = nextNode;
+        }
+    }
 }
