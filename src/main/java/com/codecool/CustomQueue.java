@@ -13,7 +13,7 @@ public class CustomQueue {
     }
 
     public void enqueue(String value) throws IllegalArgumentException {
-        if (invalidValue(value)) {
+        if (isInvalidValue(value)) {
             throw new IllegalArgumentException();
         } else {
             changeFieldsState(value);
@@ -21,9 +21,9 @@ public class CustomQueue {
     }
 
     private void changeFieldsState(String value) {
-        if (emptyQueue()) {
+        if (isEmptyQueue()) {
             initializeHead(value);
-        } else if (emptyTail()) {
+        } else if (isEmptyTail()) {
             initializeTail(value);
             setHeadNextNodeToTail();
         } else {
@@ -49,7 +49,7 @@ public class CustomQueue {
         return new Node(value, null);
     }
 
-    private boolean emptyTail() {
+    private boolean isEmptyTail() {
         return tail == null;
     }
 
@@ -65,12 +65,12 @@ public class CustomQueue {
         head = createNewNode(value);
     }
 
-    private boolean invalidValue(String value) {
+    private boolean isInvalidValue(String value) {
         return value == null;
     }
 
     public String peek() throws NoSuchElementException {
-        if (emptyQueue()) {
+        if (isEmptyQueue()) {
             throw new NoSuchElementException();
         }
         return getHeadValue();
@@ -80,16 +80,16 @@ public class CustomQueue {
         return head.value;
     }
 
-    private boolean emptyQueue() {
-        return emptyHead();
+    private boolean isEmptyQueue() {
+        return isEmptyHead();
     }
 
-    private boolean emptyHead() {
+    private boolean isEmptyHead() {
         return head == null;
     }
 
     public String dequeue() throws NoSuchElementException {
-        if (emptyQueue()) {
+        if (isEmptyQueue()) {
             throw new NoSuchElementException();
         }
         return getHeadValue();
