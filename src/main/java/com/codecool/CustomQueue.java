@@ -26,7 +26,27 @@ public class CustomQueue {
         } else if (emptyTail()) {
             initializeTail(value);
             setHeadNextNodeToTail();
+        } else {
+            changeTailState(value);
         }
+    }
+
+    private void changeTailState(String value) {
+        Node newTail = createNewNode(value);
+        setTailReference(newTail);
+        changeTail(newTail);
+    }
+
+    private void changeTail(Node newTail) {
+        tail = newTail;
+    }
+
+    private void setTailReference(Node newTail) {
+        tail.nextNode = newTail;
+    }
+
+    private Node createNewNode(String value) {
+        return new Node(value, null);
     }
 
     private boolean emptyTail() {
