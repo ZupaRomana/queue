@@ -44,7 +44,16 @@ class QueueTest {
         CustomQueue queue = new CustomQueue();
 
         assertThrows(NoSuchElementException.class, () -> {
-            queue.peek();
+            String result = queue.peek();
+        });
+    }
+
+    @Test
+    void throwsException_when_deQueueInvokedAndNoElems() {
+        CustomQueue queue = new CustomQueue();
+
+        assertThrows(NoSuchElementException.class, () -> {
+            String result = queue.dequeue();
         });
     }
 
