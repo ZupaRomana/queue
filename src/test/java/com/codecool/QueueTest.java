@@ -15,4 +15,14 @@ class QueueTest {
         });
     }
 
+    @Test
+    void returnsNull_when_PeekInvokedAndNoElemsInQueue() {
+        CustomQueue queue = new CustomQueue();
+
+        String expected = null;
+        String actual = queue.peek();
+
+        assertEquals(expected, actual);
+    }
+
 }
