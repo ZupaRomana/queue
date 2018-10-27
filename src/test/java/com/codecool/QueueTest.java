@@ -18,16 +18,6 @@ class QueueTest {
     }
 
     @Test
-    void returnsNull_when_PeekInvokedAndNoElemsInQueue() {
-        CustomQueue queue = new CustomQueue();
-
-        String expected = null;
-        String actual = queue.peek();
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
     void returnsValidValue_when_oneItemPassed() {
         CustomQueue queue = new CustomQueue();
         queue.enqueue("example");
