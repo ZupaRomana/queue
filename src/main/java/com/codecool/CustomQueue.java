@@ -77,7 +77,29 @@ public class CustomQueue {
         if (isEmptyQueue()) {
             throw new NoSuchElementException();
         }
-        return getHeadValue();
+        String result = getHeadValue();
+        changeHeadState();
+        return result;
+    }
+
+    private void changeHeadState() {
+        if (isOneElement()){
+            setHeadEmpty();
+        } else {
+            changeHeadReference();
+        }
+    }
+
+    private void changeHeadReference() {
+        head = head.nextNode;
+    }
+
+    private void setHeadEmpty() {
+        setHeadNull();
+    }
+
+    private void setHeadNull() {
+        head = null;
     }
 
     private String getHeadValue() {
