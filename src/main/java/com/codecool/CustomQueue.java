@@ -14,12 +14,16 @@ public class CustomQueue {
         if (invalidValue(value)) {
             throw new IllegalArgumentException();
         } else {
-            if (emptyQueue()) {
-                initializeHead(value);
-            } else if (emptyTail()) {
-                initializeTail(value);
-                setHeadNextNodeToTail();
-            }
+            changeFieldsState(value);
+        }
+    }
+
+    private void changeFieldsState(String value) {
+        if (emptyQueue()) {
+            initializeHead(value);
+        } else if (emptyTail()) {
+            initializeTail(value);
+            setHeadNextNodeToTail();
         }
     }
 
