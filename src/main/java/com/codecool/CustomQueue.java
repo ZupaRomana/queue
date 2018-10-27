@@ -26,6 +26,14 @@ public class CustomQueue {
         return emptyQueue() ? null : getHeadValue();
     }
 
+    private String getHeadValue() {
+        return head.value;
+    }
+
+    private boolean emptyQueue() {
+        return head == null;
+    }
+
     public String dequeue() {
         return null;
     }
