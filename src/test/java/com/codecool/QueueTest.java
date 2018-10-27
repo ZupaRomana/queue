@@ -39,12 +39,18 @@ class QueueTest {
     @Test
     void returnsValidValue_when_manyItemsPassed() {
         CustomQueue queue = new CustomQueue();
-        fillQueue(5);
+        fillQueue(queue, 5);
 
         String expected = "1";
         String actual = queue.peek();
 
         assertEquals(expected, actual);
+    }
+
+    private void fillQueue(CustomQueue queue, int numOfElems) {
+        for (int i = 1; i <= numOfElems; i++) {
+            queue.enqueue(Integer.toString(i));
+        }
     }
 
 }
