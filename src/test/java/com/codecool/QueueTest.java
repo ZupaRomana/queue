@@ -36,4 +36,15 @@ class QueueTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void returnsValidValue_when_manyItemsPassed() {
+        CustomQueue queue = new CustomQueue();
+        fillQueue(5);
+
+        String expected = "1";
+        String actual = queue.peek();
+
+        assertEquals(expected, actual);
+    }
+
 }
