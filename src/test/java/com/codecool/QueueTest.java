@@ -68,6 +68,18 @@ class QueueTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void returnsValidValue_when_moreElemsPassed_and_moreDequeueInvoked() {
+        CustomQueue queue = new CustomQueue();
+        fillQueue(queue, 5);
+        queue.dequeue();
+
+        String expected = "2";
+        String actual = queue.dequeue();
+
+        assertEquals(expected, actual);
+    }
+
     private void fillQueue(CustomQueue queue, int numOfElems) {
         for (int i = 1; i <= numOfElems; i++) {
             queue.enqueue(Integer.toString(i));
