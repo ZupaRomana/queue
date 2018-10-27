@@ -16,11 +16,14 @@ public class CustomQueue {
         } else {
             if (emptyQueue()) {
                 initializeHead(value);
-                initializeTail(value);
             } else {
 
             }
         }
+    }
+
+    private void initializeHead(String value) {
+        head = new Node(value, tail);
     }
 
     private boolean invalidValue(String value) {
