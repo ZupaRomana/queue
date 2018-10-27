@@ -16,10 +16,23 @@ public class CustomQueue {
         } else {
             if (emptyQueue()) {
                 initializeHead(value);
-            } else {
-
+            } else if (emptyTail()) {
+                initializeTail(value);
+                setHeadNextNodeToTail();
             }
         }
+    }
+
+    private boolean emptyTail() {
+        return tail == null;
+    }
+
+    private void setHeadNextNodeToTail() {
+        head.nextNode = tail;
+    }
+
+    private void initializeTail(String value) {
+        tail = new Node(value, null);
     }
 
     private void initializeHead(String value) {
