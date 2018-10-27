@@ -68,8 +68,11 @@ public class CustomQueue {
         return head == null;
     }
 
-    public String dequeue() {
-        return null;
+    public String dequeue() throws NoSuchElementException {
+        if (emptyQueue()) {
+            throw new NoSuchElementException();
+        }
+        return getHeadValue();
     }
 
     private class Node {
