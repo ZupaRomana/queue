@@ -14,7 +14,12 @@ public class CustomQueue {
         if (invalidValue(value)) {
             throw new IllegalArgumentException();
         } else {
+            if (emptyQueue()) {
+                initializeHead(value);
+                initializeTail(value);
+            } else {
 
+            }
         }
     }
 
