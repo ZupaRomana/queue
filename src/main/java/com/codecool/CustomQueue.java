@@ -32,17 +32,17 @@ public class CustomQueue {
     }
 
     private void changeTailState(String value) {
-        Node newTail = createNewNode(value);
-        setTailReference(newTail);
-        changeTail(newTail);
+        Node tempTail = createNewNode(value);
+        setTailReference(tempTail);
+        changeTail(tempTail);
     }
 
-    private void changeTail(Node newTail) {
-        tail = newTail;
+    private void changeTail(Node tailToSet) {
+        tail = tailToSet;
     }
 
-    private void setTailReference(Node newTail) {
-        tail.nextNode = newTail;
+    private void setTailReference(Node tailToReference) {
+        tail.nextNode = tailToReference;
     }
 
     private Node createNewNode(String value) {
@@ -58,11 +58,11 @@ public class CustomQueue {
     }
 
     private void initializeTail(String value) {
-        tail = new Node(value, null);
+        tail = createNewNode(value);
     }
 
     private void initializeHead(String value) {
-        head = new Node(value, tail);
+        head = createNewNode(value);
     }
 
     private boolean invalidValue(String value) {
