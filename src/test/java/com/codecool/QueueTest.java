@@ -2,6 +2,8 @@ package com.codecool;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 // Trying "Branch" testing method
@@ -43,6 +45,26 @@ class QueueTest {
 
         String expected = "1";
         String actual = queue.peek();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void throwsException_when_peekInvokedAndNoElems() {
+        CustomQueue queue = new CustomQueue();
+
+        assertThrows(NoSuchElementException.class, () -> {
+            queue.peek();
+        });
+    }
+
+    @Test
+    void returnsValidValue_when_deQueueInvokedOneElemPassed() {
+        CustomQueue queue = new CustomQueue();
+        queue.enqueue("example");
+
+        String expected = "example";
+        String actual = queue.dequeue();
 
         assertEquals(expected, actual);
     }
