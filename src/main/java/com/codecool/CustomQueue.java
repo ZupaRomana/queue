@@ -1,5 +1,7 @@
 package com.codecool;
 
+import java.util.NoSuchElementException;
+
 public class CustomQueue {
 
     private Node head;
@@ -47,8 +49,11 @@ public class CustomQueue {
         return value == null;
     }
 
-    public String peek() {
-        return emptyQueue() ? null : getHeadValue();
+    public String peek() throws NoSuchElementException {
+        if (emptyQueue()) {
+            throw new NoSuchElementException();
+        }
+        return getHeadValue();
     }
 
     private String getHeadValue() {
