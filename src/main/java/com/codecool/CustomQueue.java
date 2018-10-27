@@ -23,7 +23,7 @@ public class CustomQueue {
     }
 
     public String peek() {
-        return null;
+        return emptyQueue() ? null : getHeadValue();
     }
 
     public String dequeue() {
