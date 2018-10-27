@@ -23,7 +23,7 @@ public class CustomQueue {
     private void changeFieldsState(String value) {
         if (isEmptyQueue()) {
             initializeHead(value);
-        } else if (isOneElement()) {
+        } else if (isOneElementInQueue()) {
             initializeTail(value);
             setHeadNextNodeToTail();
         } else {
@@ -49,7 +49,7 @@ public class CustomQueue {
         return new Node(value, null);
     }
 
-    private boolean isOneElement() {
+    private boolean isOneElementInQueue() {
         return isEmptyTail();
     }
 
@@ -81,7 +81,7 @@ public class CustomQueue {
     }
 
     private void changeHeadState() {
-        if (isOneElement()){
+        if (isOneElementInQueue()){
             setHeadEmpty();
         } else {
             changeHeadReference();
