@@ -25,4 +25,15 @@ class QueueTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void returnsValidValue_when_oneItemPassed() {
+        CustomQueue queue = new CustomQueue();
+        queue.enqueue("example");
+
+        String expected = "example";
+        String actual = queue.peek();
+
+        assertEquals(expected, actual);
+    }
+
 }
