@@ -52,6 +52,10 @@ public class CustomQueue {
     }
 
     private boolean emptyQueue() {
+        return emptyHead();
+    }
+
+    private boolean emptyHead() {
         return head == null;
     }
 
